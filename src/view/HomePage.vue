@@ -1,15 +1,12 @@
 <template>
    <div class="contenar">
     <div class="left-info">
-        <HeaderPart v-if="counter===0"/>   
-        <Information  v-if="counter===1"/>   
-        <Education  v-if="counter===2"/>   
-        <Experins  v-if="counter===3"/>   
-        <div class="buttnes ">
-            <button class=" btn-back" v-if="counter > 0" @click="handelBackComponent"> Back</button>
-            <button class="btn" v-if="counter < 3" @click="handelCangeComponent">Next</button>
-        </div>
-        
+        <HeaderPart v-if="counter===0" :counter="counter"  @next="handelCangeComponent"/>   
+        <Information  v-if="counter===1" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
+        <SkillsLanguages  v-if="counter===2" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
+        <Edgucation  v-if="counter===3" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
+        <Experins  v-if="counter===4" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
+        <SubmitCv  v-if="counter===5" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
     </div>
     <div class="right-cv">
 
@@ -20,15 +17,19 @@
 
 <script>
 import HeaderPart from "../components/HeadPart.vue"
-import Education from "../components/EducationSkillsLanguages.vue"
+import SkillsLanguages from "../components/SkillsLanguages.vue"
 import Experins from "../components/ExperincePart.vue"
 import Information from "../components/InfoPart.vue"
+import Edgucation from "../components/Edgucation.vue"
+import SubmitCv from "../components/SubmitCvData.vue"
 export default{
    components:{
     HeaderPart,
     Experins,
-    Education,
-    Information
+    SkillsLanguages,
+    Information,
+    Edgucation,
+    SubmitCv
    },
    data(){
     return{
@@ -37,7 +38,7 @@ export default{
    },
    methods:{
     handelCangeComponent(){
-        if (this.counter < 3) {
+        if (this.counter < 6) {
           this.counter +=1  
         }
     },
@@ -61,11 +62,16 @@ export default{
     box-shadow: 0 0 20px -10px;
     padding: 10px;
     overflow: auto;
+    
 }
 .left-info{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
+}
+.right-cv{
+    height: 100%; 
 }
 .buttnes{
     display: flex;
@@ -74,14 +80,15 @@ export default{
 }
 .btn{
     height: 40px;
-    width: 120px;
+    min-width: 120px;
     border-radius: 15px;
     padding: 0 20px;
     border: 0;
-    color: var(--text-color);
+    color: white;
     font-size: 18px;
     font-weight: bold;
-    background-color: var(  --text-lighti-color);
+    background-color: var(--btn-color);
+    cursor: pointer;
 }
 .btn-back{
     height: 40px;
@@ -93,11 +100,12 @@ export default{
     font-size: 18px;
     font-weight: bold;
    background-color: transparent;
+   cursor: pointer;
 }
 .btn-back:hover{
     text-decoration: underline;
  }
 .btn:hover{
-    background-color: #78acbd;
+    background-color: #0a0282;
 }
 </style>
