@@ -18,6 +18,7 @@ export default {
   --item-color:#19376D;
   --text-color:#576CBC;
   --text-lighti-color:#A5D7E8;
+  --btn-color:rgb(4, 4, 215);
 }
 body{
   background-color: var(--bg-dark-color);
