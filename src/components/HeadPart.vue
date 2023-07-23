@@ -7,11 +7,11 @@
            <div class="flex-inputs">
             <div class="inputs">
                <label for="name">Name</label>
-               <input   type="text" id="name" placeholder="EX : Hussein alaa"> 
+               <input v-model="fullNmae"  type="text" id="name" placeholder="EX : Hussein alaa"> 
             </div>
             <div class="inputs">
                <label for="Speciality">Speciality</label>
-               <input   type="text" id="Speciality" placeholder="EX : Frontend / backend"> 
+               <input  v-model="speciality" type="text" id="Speciality" placeholder="EX : Frontend / backend"> 
             </div>
            </div>
            <div class="input-image">
@@ -37,17 +37,31 @@
 </template>
 
 <script>
+// import { ref } from 'vue';
+import AllDataCv from '../functions/CvData'
 export default {
     props:['counter'],
     data(){
        return{
-        selectedFile:''
+        profileInfo:[],
+        selectedFile:'',
+        fullNmae:'',
+        speciality:''
        }
     },
     methods:{
         handelSubmit(e){
             e.preventDefault();
-            this.$emit('next')
+            if(this.profileInfo ){
+              this.profileInfo.push({
+                image:URL.createObjectURL(this.selectedFile),
+                fullNmae:this.fullNmae,
+                speciality:this.speciality
+              })
+               const datacv= AllDataCv(this.profileInfo)
+              console.log(datacv);
+            }
+            // this.$emit('next')
         },
         handleFileChange(event) {
         this.selectedFile = event.target.files[0];
