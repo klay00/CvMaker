@@ -1,17 +1,18 @@
 <template>
    <div class="contenar">
     <div class="left-info">
-        <HeaderPart v-if="counter===0" :counter="counter"  @next="handelCangeComponent"/>   
-        <Information  v-if="counter===1" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
-        <SkillsLanguages  v-if="counter===2" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
-        <Edgucation  v-if="counter===3" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
-        <Experins  v-if="counter===4" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
+        <HeaderPart v-if="counter===0" :counter="counter"  @next="handelCangeComponent" @headData="headData"/>   
+        <Information  v-if="counter===1" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent" @infoData="infoData"/>   
+        <SkillsLanguages  v-if="counter===2" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent" @hnadelLanguction="hnadelLanguction" @hnadelSkills="hnadelSkills"/>   
+        <Edgucation  v-if="counter===3" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent" @handelEdguction="handelEdguction"/>   
+        <Experins  v-if="counter===4" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent" @handelExperience="handelExperience"/>   
         <SubmitCv  v-if="counter===5" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
     </div>
     <div class="right-cv" >
-        <div>
-            {{  }}
-          <button @click="handealGitData">get data</button>
+        <div >
+            {{ profileData.fullNmae }}
+            {{ informationData.email }}
+          
         </div>
         
     </div>
@@ -26,7 +27,6 @@ import Experins from "../components/ExperincePart.vue"
 import Information from "../components/InfoPart.vue"
 import Edgucation from "../components/Edgucation.vue"
 import SubmitCv from "../components/SubmitCvData.vue"
-import AllDataCv from '../functions/CvData'
 export default{
    components:{
     HeaderPart,
@@ -39,7 +39,12 @@ export default{
    data(){
     return{
         counter:0,
-        AllData:[]
+        profileData:[],
+        informationData:[],
+        languages:[],
+        skillsData:[],
+        edgucation:[],
+        experins:[]
     }
    },
    methods:{
@@ -51,11 +56,23 @@ export default{
     handelBackComponent(){
           this.counter -=1  
     },
-    handealGitData(){
-       
-         const data=AllDataCv()
-         this.AllData.push(data)
-         console.log(this.AllData);
+    headData(headData){
+         this.profileData=headData
+    },
+    infoData(infoData){
+         this.informationData=infoData
+    },
+    hnadelLanguction(hnadelLanguction){
+        this.languages=hnadelLanguction
+    },
+    hnadelSkills(hnadelSkills){
+        this.skillsData=hnadelSkills
+    },
+    handelEdguction(handelEdguction){
+        this.edgucation=handelEdguction
+    },
+    handelExperience(handelExperience){
+        this.experins=handelExperience
     }
    },
 
