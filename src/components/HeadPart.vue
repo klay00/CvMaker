@@ -37,8 +37,7 @@
 </template>
 
 <script>
-// import { ref } from 'vue';
-import AllDataCv from '../functions/CvData'
+
 export default {
     props:['counter'],
     data(){
@@ -53,15 +52,15 @@ export default {
         handelSubmit(e){
             e.preventDefault();
             if(this.profileInfo ){
-              this.profileInfo.push({
+              this.profileInfo=({
                 image:URL.createObjectURL(this.selectedFile),
                 fullNmae:this.fullNmae,
                 speciality:this.speciality
               })
-               const datacv= AllDataCv(this.profileInfo)
-              console.log(datacv);
+              this.$emit('headData',this.profileInfo)
+              this.$emit('next')
             }
-            // this.$emit('next')
+            
         },
         handleFileChange(event) {
         this.selectedFile = event.target.files[0];

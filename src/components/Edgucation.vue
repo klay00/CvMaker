@@ -45,7 +45,7 @@
             </form>
          <div class="buttnes ">
             <button class=" btn-back" v-if="counter > 0" @click="$emit('back')"> Back</button>
-            <button class="btn" v-if="counter < 4" @click="$emit('next')">Next</button>
+            <button class="btn" v-if="counter < 4" @click="handelAddEdguction">Next</button>
         </div> 
         </div>
         
@@ -78,7 +78,7 @@ export default {
                start: this.start,
               end: this.end
               });
-
+           
            this.unversty='',
            this.specialization='',
            this.degree='',
@@ -86,6 +86,14 @@ export default {
            this.end='',
            console.log(this.edguction);
           }
+        },
+        handelAddEdguction(){
+         if (this.edguction.length !==0) {
+            
+            this.$emit('handelEdguction',this.edguction)
+          this.$emit('next')
+         }
+         
         }
     }
 }

@@ -21,7 +21,7 @@
             </form>
          <div class="buttnes ">
             <button class=" btn-back" v-if="counter > 0" @click="$emit('back')"> Back</button>
-            <button class="btn" v-if="counter < 3" @click="$emit('next')">Next</button>
+            <button class="btn" v-if="counter < 3" @click="handelNextComponent">Next</button>
         </div> 
         </div>
         
@@ -55,6 +55,13 @@
         this.Languction.push(this.newLanguction.trim());
         this.newLanguction = ''; 
        }
+      },
+      handelNextComponent(){
+        if(this.skills.length !==0 && this.Languction.length !== 0) {
+          this.$emit('hnadelSkills', this.skills)
+          this.$emit('hnadelLanguction', this.Languction)
+          this.$emit('next')
+        } 
       }
     }
   }

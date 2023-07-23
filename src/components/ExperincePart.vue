@@ -38,7 +38,7 @@
         </div>
   <div class="buttnes ">
             <button class=" btn-back" v-if="counter > 0" @click="$emit('back')"> Back</button>
-            <button class="btn" v-if="counter < 5" @click="$emit('next')">Next</button>
+            <button class="btn" v-if="counter < 5" @click="handelChngeComponent">Next</button>
         </div>
         
         </div>
@@ -76,6 +76,12 @@
            this.end='',
            console.log(this.experins);
           }
+        },
+        handelChngeComponent(){
+         if(this.experins.length){
+            this.$emit('handelExperience',this.experins)
+            this.$emit('next')
+         }
         }
     }
 }
