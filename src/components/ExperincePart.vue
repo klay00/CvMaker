@@ -6,7 +6,7 @@
           <form @submit="handelExperins">
                 <div class="inputs">
                    <label for="Company">Company Name</label>
-                   <input v-model="company"  type="text" id="Company" placeholder="EX : google facebok  "> 
+                   <input  v-model="company"  type="text" id="Company" placeholder="EX : google facebok  "> 
                 </div>
                 <div class="inputs">
                    <label for="position">Work position</label>
@@ -60,7 +60,7 @@
     methods:{
       handelExperins(e){
            e.preventDefault();
-           if (this.experins !== '') {
+           if (this.experins !== []) {
                this.experins.push({
                 company: this.company,
                 position: this.position,
@@ -80,7 +80,3 @@
     }
 }
   </script>
-  
-  <style>
-  
-  </style>
