@@ -8,8 +8,12 @@
         <Experins  v-if="counter===4" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
         <SubmitCv  v-if="counter===5" :counter="counter" @back="handelBackComponent" @next="handelCangeComponent"/>   
     </div>
-    <div class="right-cv">
-
+    <div class="right-cv" >
+        <div>
+            {{  }}
+          <button @click="handealGitData">get data</button>
+        </div>
+        
     </div>
    </div>
 
@@ -22,6 +26,7 @@ import Experins from "../components/ExperincePart.vue"
 import Information from "../components/InfoPart.vue"
 import Edgucation from "../components/Edgucation.vue"
 import SubmitCv from "../components/SubmitCvData.vue"
+import AllDataCv from '../functions/CvData'
 export default{
    components:{
     HeaderPart,
@@ -33,7 +38,8 @@ export default{
    },
    data(){
     return{
-        counter:0
+        counter:0,
+        AllData:[]
     }
    },
    methods:{
@@ -44,7 +50,18 @@ export default{
     },
     handelBackComponent(){
           this.counter -=1  
+    },
+    handealGitData(){
+       
+         const data=AllDataCv()
+         this.AllData.push(data)
+         console.log(this.AllData);
     }
+   },
+
+   mounted(){
+    this.AllData = localStorage.getItem('profileInfo')
+    console.log(this.AllData);
    }
 }
 </script>
