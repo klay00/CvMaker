@@ -6,19 +6,19 @@
            <div class="flex-inputs">
             <div class="inputs">
                <label for="Address">Address</label>
-               <input  v-model="address" type="text" id="Address" placeholder="EX : Dora, Baghdad "> 
+               <input required v-model="address" type="text" id="Address" placeholder="EX : Dora, Baghdad "> 
             </div>
             <div class="inputs">
                <label for="email">E-Mail Address</label>
-               <input v-model="email"  type="email" id="email" placeholder="EX : exmaple@example.com"> 
+               <input required v-model="email"  type="email" id="email" placeholder="EX : exmaple@example.com"> 
             </div>
             <div class="inputs">
                <label for="Phone">Phone</label>
-               <input  v-model="phone" type="number" id="Phone" placeholder="EX : 07812345678"> 
+               <input required v-model="phone" type="number" id="Phone" placeholder="EX : 07812345678"> 
             </div>
             <div class="inputs">
                <label for="Profile">Profile</label>
-               <textarea  v-model="profile"  id="Profile" cols="30" rows="4" placeholder="simple pargraph about you"></textarea> 
+               <textarea required v-model="profile"  id="Profile" cols="30" rows="4" placeholder="simple pargraph about you"></textarea> 
             </div>
            </div>
            <div class="buttnes ">
