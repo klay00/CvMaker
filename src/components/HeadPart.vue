@@ -7,11 +7,11 @@
            <div class="flex-inputs">
             <div class="inputs">
                <label for="name">Name</label>
-               <input v-model="fullNmae"  type="text" id="name" placeholder="EX : Hussein alaa"> 
+               <input required v-model="fullNmae"  type="text" id="name" placeholder="EX : Hussein alaa"> 
             </div>
             <div class="inputs">
                <label for="Speciality">Speciality</label>
-               <input  v-model="speciality" type="text" id="Speciality" placeholder="EX : Frontend / backend"> 
+               <input required v-model="speciality" type="text" id="Speciality" placeholder="EX : Frontend / backend"> 
             </div>
            </div>
            <div class="input-image">
@@ -22,7 +22,7 @@
              <div class="text">
              <span>Click to upload image</span>
                </div>
-                  <input   type="file" @change="handleFileChange" id="file">
+                  <input  required type="file" @change="handleFileChange" id="file">
                </label>
                <div class="image">
                  
