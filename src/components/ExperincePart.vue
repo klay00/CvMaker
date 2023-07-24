@@ -73,12 +73,11 @@
            this.position='',
            this.details='',
            this.start='',
-           this.end='',
-           console.log(this.experins);
+           this.end=''
           }
         },
         handelChngeComponent(){
-         if(this.experins.length){
+         if(this.experins){
             this.$emit('handelExperience',this.experins)
             this.$emit('next')
          }
