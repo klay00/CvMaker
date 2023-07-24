@@ -10,8 +10,14 @@
     </div>
     <div class="right-cv" >
         <div >
-            {{ profileData.fullNmae }}
-            {{ informationData.email }}
+            <CvDisplay 
+            :profileData="profileData"
+            :informationData="informationData"
+            :languages="languages"
+            :skillsData="skillsData"
+            :edgucation="edgucation"
+            :experins="experins"
+            />
           
         </div>
         
@@ -27,6 +33,7 @@ import Experins from "../components/ExperincePart.vue"
 import Information from "../components/InfoPart.vue"
 import Edgucation from "../components/Edgucation.vue"
 import SubmitCv from "../components/SubmitCvData.vue"
+import CvDisplay from "@/components/CvDisplay.vue"
 export default{
    components:{
     HeaderPart,
@@ -34,7 +41,8 @@ export default{
     SkillsLanguages,
     Information,
     Edgucation,
-    SubmitCv
+    SubmitCv,
+    CvDisplay
    },
    data(){
     return{
@@ -107,6 +115,12 @@ export default{
 .right-cv{
     height: 100%; 
 }
+.right-cv > div{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    
+}
 .buttnes{
     display: flex;
     justify-content: space-between;
@@ -142,4 +156,40 @@ export default{
 .btn:hover{
     background-color: #0a0282;
 }
+@media print {
+    :root{
+        --margin-side:5px 0px;
+        --font-12:16px;
+    }
+    .contenar{
+        display: block;
+        margin: 0;
+    }
+    .contenar >div{
+        flex: 1;
+    background-color: var(--item-color);
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    overflow: auto;
+    }
+    .left-info{
+            display: none;
+        }
+        .right-cv{
+            height: 100%;
+            width: 100%;
+        }
+        .cv-header .image{
+            width: 100px;
+            height: 100px;
+        }
+        h6{
+            font-size:16px ;
+        }
+        h5{
+            font-size:18px ;
+        }
+     
+      }
 </style>
