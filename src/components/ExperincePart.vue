@@ -60,15 +60,21 @@
     methods:{
       handelExperins(e){
            e.preventDefault();
-           if (this.experins !== []) {
-               this.experins.push({
-                company: this.company,
-                position: this.position,
-                details: this.details,
-               start: this.start,
-              end: this.end
-              });
-
+           if (
+         this.company !== '' &&
+          this.position !== '' &&
+           this.details !== '' &&
+            this.start !== '' &&
+            this.end !== ''
+           ) {
+          // All properties have values, so we can push the object
+         this.experins.push({
+          company: this.company,
+          position: this.position,
+           details: this.details,
+           start: this.start,
+           end: this.end,
+         });
            this.company='',
            this.position='',
            this.details='',
@@ -77,7 +83,7 @@
           }
         },
         handelChngeComponent(){
-         if(this.experins){
+         if(this.experins.length !==0){
             this.$emit('handelExperience',this.experins)
             this.$emit('next')
          }
