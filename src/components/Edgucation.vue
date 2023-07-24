@@ -70,22 +70,27 @@ export default {
     methods:{
         handelEdguction(e){
            e.preventDefault();
-           if (this.edguction !== '') {
-               this.edguction.push({
-               unversty: this.unversty,
-               specialization: this.specialization,
-               degree: this.degree,
-               start: this.start,
-              end: this.end
-              });
-           
-           this.unversty='',
-           this.specialization='',
-           this.degree='',
-           this.start='',
-           this.end='',
-           console.log(this.edguction);
-          }
+           if (
+                this.unversty !== '' &&
+                this.specialization !== '' &&
+                this.degree !== '' &&
+                this.start !== '' &&
+                this.end !== ''
+               ) {
+                 this.edguction.push({
+                   unversty: this.unversty,
+                   specialization: this.specialization,
+                   degree: this.degree,
+                   start: this.start,
+                   end: this.end
+                  });
+
+                this.unversty = '';
+                this.specialization = '';
+                this.degree = '';
+                this.start = '';
+                this.end = '';
+             }
         },
         handelAddEdguction(){
          if (this.edguction.length !==0) {
