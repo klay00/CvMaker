@@ -81,7 +81,7 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 20%;
+    height: 15%;
     border-bottom:2px black solid ;
     margin: var(--margin-side);
  }
@@ -106,7 +106,7 @@ export default {
  }
  .cv-information{
     display: flex;
-    height: 20%;
+    height: 15%;
     margin: var(--margin-side);
  }
  .cv-information .left{
@@ -122,7 +122,7 @@ export default {
     display: flex;
     gap: 20px;
     margin: var(--margin-side);
-    height: 50%;
+    height: 60%;
  }
  .Skils-lang{
     display: flex;
