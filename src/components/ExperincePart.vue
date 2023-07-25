@@ -35,11 +35,12 @@
                 </div>
                </div>
             </form>
-        </div>
-  <div class="buttnes ">
+            <div class="buttnes ">
             <button class=" btn-back" v-if="counter > 0" @click="$emit('back')"> Back</button>
             <button class="btn" v-if="counter < 5" @click="handelChngeComponent">Next</button>
         </div>
+        </div>
+         
         
         </div>
   </template>
