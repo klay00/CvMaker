@@ -148,7 +148,7 @@ label{
 }
 
 .custum-file-upload .icon svg {
-  height: 80px;
+  height: 50px;
   fill: var(--text-lighti-color);
 }
 
