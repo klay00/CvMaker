@@ -192,4 +192,35 @@ export default{
         }
      
       }
+      @media screen and (max-width: 1200px) {
+        .contenar{
+        margin: 5vh 2vw;
+       }
+      }
+      @media screen and (max-width: 950px) {
+        .contenar{
+        height: 160vh;
+        flex-direction: column;
+       }
+      }
+      @media screen and (max-width: 400px) {
+        .contenar{
+        height: 120vh;
+        flex-direction: column;
+       }
+       .custum-file-upload{
+        height: 80px;
+        width: 80px;
+       }
+       
+ 
+   .input-image .image img {
+      height: 74px;
+      width: 72px;
+      }
+
+    .cv-loop img{
+    width: 200px!important;
+    }
+    }
 </style>
