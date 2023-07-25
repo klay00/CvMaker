@@ -190,6 +190,11 @@ export default{
         h5{
             font-size:18px ;
         }
+        .title h1{
+ 
+          font-size: 35px;
+
+        }
      
       }
       @media screen and (max-width: 1200px) {

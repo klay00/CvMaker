@@ -105,10 +105,12 @@ export default {
  .title h1{
     color: black;
     margin: 0%;
+    font-size: 18px;
 
  }
  .title p{
     color:  gray;
+    font-size: var(--font-12)
  }
  .cv-information{
     display: flex;
