@@ -58,7 +58,7 @@ export default {
    },
    computed: {
     getWhatsAppLink() {
-      const phoneNumber = "07812364039";  
+      const phoneNumber = "+9647812364039";  
       return `https://api.whatsapp.com/send?phone=${phoneNumber}`;
     },
     getMailtoLink() {
